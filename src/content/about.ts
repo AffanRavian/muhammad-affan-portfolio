@@ -1,0 +1,2 @@
+export const aboutCopy =
+  "I'm Muhammad Affan, a software engineering student and full-stack developer who enjoys turning complex workflows into intuitive products. At Creative Connects LLC, I've contributed to enterprise CRM, e-commerce, and browser-based editing tools, moving between interface development, APIs, integrations, and the details that make systems maintainable. I value clarity, reusable components, performance, and collaboration.";

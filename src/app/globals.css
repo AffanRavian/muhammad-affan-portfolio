@@ -1,0 +1,78 @@
+@import "tailwindcss";
+
+:root {
+  --color-foundation: #101114;
+  --color-paper: #f3f0e8;
+  --color-muted: #b4b7be;
+  --color-accent: #c5f277;
+  --color-ink: #101114;
+  --color-ink-inverse: #f3f0e8;
+  --color-focus-ring: #c5f277;
+  --color-error: #e5484d;
+  --color-success: #30a46c;
+}
+
+@theme inline {
+  --color-foundation: var(--color-foundation);
+  --color-paper: var(--color-paper);
+  --color-muted: var(--color-muted);
+  --color-accent: var(--color-accent);
+  --color-ink: var(--color-ink);
+  --color-ink-inverse: var(--color-ink-inverse);
+  --color-focus-ring: var(--color-focus-ring);
+  --color-error: var(--color-error);
+  --color-success: var(--color-success);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+  --font-display: var(--font-space-grotesk);
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+  }
+
+  body {
+    @apply bg-foundation font-sans text-ink-inverse antialiased;
+  }
+
+  ::selection {
+    @apply bg-accent/40 text-ink;
+  }
+}
+
+@utility text-display-name {
+  font-size: clamp(3rem, 8vw, 6.5rem);
+  line-height: 0.95;
+}
+
+@utility text-display-h2 {
+  font-size: clamp(1.75rem, 4vw, 2.75rem);
+  line-height: 1.1;
+}
+
+@utility section-rhythm {
+  padding-top: clamp(4rem, 12vh, 8rem);
+  padding-bottom: clamp(4rem, 12vh, 8rem);
+}
+
+@utility pb-section-rhythm {
+  padding-bottom: clamp(4rem, 12vh, 8rem);
+}
+
+@utility hero-grid {
+  background-image:
+    linear-gradient(to right, rgb(243 240 232 / 0.04) 1px, transparent 1px),
+    linear-gradient(to bottom, rgb(243 240 232 / 0.04) 1px, transparent 1px);
+  background-size: 48px 48px;
+}
+
+.skip-link {
+  @apply sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:rounded-sm focus:bg-accent focus:px-4 focus:py-2 focus:font-mono focus:text-xs focus:uppercase focus:tracking-wider focus:text-ink focus:outline-none;
+}

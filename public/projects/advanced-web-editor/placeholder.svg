@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" role="img" aria-labelledby="title desc">
+  <title id="title">Conceptual advanced web editor artwork</title>
+  <desc id="desc">An abstract editing plane with crop marks, type, and geometric shapes. This is not an application screenshot.</desc>
+  <defs>
+    <pattern id="dots" width="32" height="32" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="1.5" fill="#f3f0e8" fill-opacity="0.12"/>
+    </pattern>
+  </defs>
+  <rect width="1200" height="900" fill="#101114"/>
+  <rect width="1200" height="900" fill="url(#dots)"/>
+  <g transform="rotate(-5 600 450)">
+    <rect x="292" y="125" width="616" height="650" fill="#f3f0e8"/>
+    <path d="M292 185H908M352 125V775" stroke="#101114" stroke-opacity="0.12"/>
+    <rect x="410" y="238" width="346" height="210" fill="#101114"/>
+    <circle cx="510" cy="333" r="58" fill="#c5f277"/>
+    <path d="M610 270L714 416H506Z" fill="#f3f0e8" fill-opacity="0.88"/>
+    <rect x="410" y="510" width="260" height="16" fill="#101114"/>
+    <rect x="410" y="550" width="386" height="9" fill="#101114" opacity="0.25"/>
+    <rect x="410" y="580" width="330" height="9" fill="#101114" opacity="0.25"/>
+    <rect x="410" y="610" width="362" height="9" fill="#101114" opacity="0.25"/>
+    <text x="410" y="694" fill="#101114" font-family="ui-monospace, monospace" font-size="14" letter-spacing="3">IMAGE / PDF / TYPE / SHAPE</text>
+  </g>
+  <g fill="none" stroke="#c5f277" stroke-width="3">
+    <path d="M220 178V112H286M914 112H980V178M220 722V788H286M914 788H980V722"/>
+    <circle cx="221" cy="450" r="32"/>
+    <path d="M189 450H253M221 418V482"/>
+  </g>
+  <g fill="#b4b7be" font-family="ui-monospace, monospace" font-size="15" letter-spacing="3">
+    <text x="120" y="82">INTERACTIVE EDITING PLANE</text>
+    <text x="862" y="820">CONCEPT / 03</text>
+  </g>
+  <text x="120" y="835" fill="#f3f0e8" font-family="Arial, sans-serif" font-size="54" font-weight="600" letter-spacing="-2">TOOLS FOR MAKING</text>
+</svg>

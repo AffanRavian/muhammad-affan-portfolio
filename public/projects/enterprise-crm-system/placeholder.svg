@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" role="img" aria-labelledby="title desc">
+  <title id="title">Conceptual enterprise CRM artwork</title>
+  <desc id="desc">An abstract network of operational modules and connecting lines. This is not an application screenshot.</desc>
+  <defs>
+    <pattern id="grid" width="60" height="60" patternUnits="userSpaceOnUse">
+      <path d="M 60 0 L 0 0 0 60" fill="none" stroke="#f3f0e8" stroke-opacity="0.055" stroke-width="1"/>
+    </pattern>
+  </defs>
+  <rect width="1200" height="900" fill="#101114"/>
+  <rect width="1200" height="900" fill="url(#grid)"/>
+  <path d="M150 160H1050M150 740H1050" stroke="#f3f0e8" stroke-opacity="0.16"/>
+  <path d="M250 250L460 370L600 235L765 420L975 300M250 625L455 525L610 665L780 545L975 650" fill="none" stroke="#b4b7be" stroke-opacity="0.42" stroke-width="2"/>
+  <path d="M460 370L455 525M600 235L610 665M765 420L780 545" fill="none" stroke="#c5f277" stroke-opacity="0.7" stroke-width="3"/>
+  <g fill="#101114" stroke="#f3f0e8" stroke-opacity="0.65" stroke-width="2">
+    <circle cx="250" cy="250" r="40"/>
+    <circle cx="975" cy="300" r="40"/>
+    <circle cx="250" cy="625" r="40"/>
+    <circle cx="975" cy="650" r="40"/>
+    <rect x="405" y="320" width="110" height="100" rx="4"/>
+    <rect x="725" y="370" width="110" height="100" rx="4"/>
+    <rect x="400" y="475" width="110" height="100" rx="4"/>
+    <rect x="725" y="495" width="110" height="100" rx="4"/>
+  </g>
+  <g fill="#c5f277">
+    <circle cx="600" cy="235" r="13"/>
+    <circle cx="610" cy="665" r="13"/>
+    <circle cx="460" cy="370" r="9"/>
+    <circle cx="455" cy="525" r="9"/>
+    <circle cx="765" cy="420" r="9"/>
+    <circle cx="780" cy="545" r="9"/>
+  </g>
+  <rect x="558" y="398" width="94" height="94" rx="47" fill="#c5f277"/>
+  <path d="M581 445H629M605 421V469" stroke="#101114" stroke-width="4"/>
+  <g fill="#b4b7be" font-family="ui-monospace, monospace" font-size="15" letter-spacing="3">
+    <text x="150" y="125">OPERATIONAL RELATIONSHIPS</text>
+    <text x="844" y="790">CONCEPT / 01</text>
+  </g>
+  <text x="150" y="805" fill="#f3f0e8" font-family="Arial, sans-serif" font-size="54" font-weight="600" letter-spacing="-2">CONNECTED MODULES</text>
+</svg>

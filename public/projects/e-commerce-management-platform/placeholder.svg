@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" role="img" aria-labelledby="title desc">
+  <title id="title">Conceptual multi-portal commerce artwork</title>
+  <desc id="desc">An abstract composition of three connected role-based portals. This is not an application screenshot.</desc>
+  <rect width="1200" height="900" fill="#101114"/>
+  <path d="M0 180H1200M0 720H1200" stroke="#f3f0e8" stroke-opacity="0.13"/>
+  <g transform="translate(142 220)">
+    <rect width="260" height="420" rx="6" fill="#f3f0e8"/>
+    <rect x="28" y="30" width="86" height="9" fill="#101114" opacity="0.9"/>
+    <rect x="28" y="68" width="204" height="142" fill="#101114" opacity="0.08"/>
+    <circle cx="70" cy="278" r="38" fill="#c5f277"/>
+    <rect x="126" y="248" width="106" height="12" fill="#101114" opacity="0.7"/>
+    <rect x="126" y="276" width="78" height="8" fill="#101114" opacity="0.25"/>
+    <rect x="28" y="354" width="204" height="2" fill="#101114" opacity="0.18"/>
+    <text x="28" y="392" fill="#101114" font-family="ui-monospace, monospace" font-size="13" letter-spacing="2">ADMIN</text>
+  </g>
+  <g transform="translate(470 160)">
+    <rect width="260" height="540" rx="6" fill="#c5f277"/>
+    <rect x="28" y="30" width="112" height="9" fill="#101114" opacity="0.9"/>
+    <circle cx="130" cy="190" r="92" fill="none" stroke="#101114" stroke-width="3"/>
+    <path d="M130 98V282M38 190H222" stroke="#101114" stroke-opacity="0.35" stroke-width="2"/>
+    <rect x="28" y="330" width="204" height="14" fill="#101114" opacity="0.8"/>
+    <rect x="28" y="366" width="154" height="8" fill="#101114" opacity="0.3"/>
+    <rect x="28" y="390" width="186" height="8" fill="#101114" opacity="0.3"/>
+    <rect x="28" y="468" width="204" height="2" fill="#101114" opacity="0.22"/>
+    <text x="28" y="508" fill="#101114" font-family="ui-monospace, monospace" font-size="13" letter-spacing="2">FREELANCER</text>
+  </g>
+  <g transform="translate(798 260)">
+    <rect width="260" height="340" rx="6" fill="#f3f0e8"/>
+    <rect x="28" y="30" width="104" height="9" fill="#101114" opacity="0.9"/>
+    <g fill="#101114" opacity="0.1">
+      <rect x="28" y="74" width="92" height="92"/>
+      <rect x="140" y="74" width="92" height="92"/>
+      <rect x="28" y="186" width="92" height="62"/>
+      <rect x="140" y="186" width="92" height="62"/>
+    </g>
+    <rect x="28" y="274" width="204" height="2" fill="#101114" opacity="0.18"/>
+    <text x="28" y="312" fill="#101114" font-family="ui-monospace, monospace" font-size="13" letter-spacing="2">CUSTOMER</text>
+  </g>
+  <path d="M402 430H470M730 430H798" stroke="#c5f277" stroke-width="3"/>
+  <circle cx="436" cy="430" r="7" fill="#c5f277"/>
+  <circle cx="764" cy="430" r="7" fill="#c5f277"/>
+  <g fill="#b4b7be" font-family="ui-monospace, monospace" font-size="15" letter-spacing="3">
+    <text x="142" y="125">THREE ROLES / ONE SYSTEM</text>
+    <text x="850" y="780">CONCEPT / 02</text>
+  </g>
+  <text x="142" y="805" fill="#f3f0e8" font-family="Arial, sans-serif" font-size="54" font-weight="600" letter-spacing="-2">PORTALS IN SYNC</text>
+</svg>
