@@ -4,6 +4,8 @@ export type GalleryItem = {
   src: string;
   alt: string;
   kind: MediaKind;
+  width: number;
+  height: number;
 };
 
 export type Project = {
@@ -20,9 +22,12 @@ export type Project = {
   engineeringNotes: string[];
   considerations: string[];
   gallery: GalleryItem[];
-  placeholderPath: string;
+  mediaPath: string;
+  mediaAlt: string;
+  mediaWidth: number;
+  mediaHeight: number;
   mediaKind: MediaKind;
-  liveUrl: null;
+  liveUrl: string | null;
   repoUrl: null;
 };
 
@@ -61,7 +66,11 @@ export const projects: Project[] = [
       "Screenshots and live demos are not published here due to confidentiality.",
       "Abstract visuals on this site are conceptual — not product captures.",
     ],
-    placeholderPath: "/projects/enterprise-crm-system/placeholder.svg",
+    mediaPath: "/projects/enterprise-crm-system/placeholder.svg",
+    mediaAlt:
+      "Abstract conceptual artwork suggesting CRM module structure — not an application screenshot",
+    mediaWidth: 1200,
+    mediaHeight: 900,
     mediaKind: "abstract-placeholder",
     liveUrl: null,
     repoUrl: null,
@@ -70,6 +79,8 @@ export const projects: Project[] = [
         src: "/projects/enterprise-crm-system/placeholder.svg",
         alt: "Abstract conceptual artwork suggesting CRM module structure — not an application screenshot",
         kind: "abstract-placeholder",
+        width: 1200,
+        height: 900,
       },
     ],
   },
@@ -102,18 +113,23 @@ export const projects: Project[] = [
     ],
     considerations: [
       "Team-delivered platform; wording reflects contribution, not sole ownership.",
-      "No public demo URL is available at this time.",
-      "Gallery items use approved abstract placeholders until redacted screenshots are supplied.",
+      "The published image is a website screenshot supplied for this portfolio.",
     ],
-    placeholderPath: "/projects/e-commerce-management-platform/placeholder.svg",
-    mediaKind: "abstract-placeholder",
-    liveUrl: null,
+    mediaPath: "/photo.webp",
+    mediaAlt:
+      "Creative Prints e-commerce homepage showing product search, category navigation, and a branded merchandise hero banner",
+    mediaWidth: 2048,
+    mediaHeight: 935,
+    mediaKind: "screenshot",
+    liveUrl: "https://app.creativeprints.ae/",
     repoUrl: null,
     gallery: [
       {
-        src: "/projects/e-commerce-management-platform/placeholder.svg",
-        alt: "Abstract conceptual artwork suggesting multi-portal commerce — not an application screenshot",
-        kind: "abstract-placeholder",
+        src: "/photo.webp",
+        alt: "Creative Prints e-commerce homepage showing product search, category navigation, and a branded merchandise hero banner",
+        kind: "screenshot",
+        width: 2048,
+        height: 935,
       },
     ],
   },
@@ -148,7 +164,11 @@ export const projects: Project[] = [
       "Editor capabilities described at a high level per CV; detailed internals remain confidential.",
       "Walkthrough available upon request — no public repository link.",
     ],
-    placeholderPath: "/projects/advanced-web-editor/placeholder.svg",
+    mediaPath: "/projects/advanced-web-editor/placeholder.svg",
+    mediaAlt:
+      "Abstract conceptual artwork suggesting an interactive editor — not an application screenshot",
+    mediaWidth: 1200,
+    mediaHeight: 900,
     mediaKind: "abstract-placeholder",
     liveUrl: null,
     repoUrl: null,
@@ -157,6 +177,8 @@ export const projects: Project[] = [
         src: "/projects/advanced-web-editor/placeholder.svg",
         alt: "Abstract conceptual artwork suggesting an interactive editor — not an application screenshot",
         kind: "abstract-placeholder",
+        width: 1200,
+        height: 900,
       },
     ],
   },

@@ -12,6 +12,7 @@ export function StackGroup({ groups, inverse }: StackGroupProps) {
       {groups.map((group) => (
         <li
           key={group.category}
+          data-motion-item
           className={cn(
             "border-t pt-6",
             inverse ? "border-ink-inverse/15" : "border-ink/10",

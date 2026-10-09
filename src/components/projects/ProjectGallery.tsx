@@ -9,13 +9,16 @@ export function ProjectGallery({ items }: ProjectGalleryProps) {
   return (
     <div className="grid gap-8">
       {items.map((item) => (
-        <PlaceholderMedia
-          key={item.src}
-          src={item.src}
-          alt={item.alt}
-          kind={item.kind}
-          sizes="(min-width: 1024px) 56rem, 100vw"
-        />
+        <div key={item.src} data-case-gallery-item>
+          <PlaceholderMedia
+            src={item.src}
+            alt={item.alt}
+            kind={item.kind}
+            width={item.width}
+            height={item.height}
+            sizes="(min-width: 1024px) 56rem, 100vw"
+          />
+        </div>
       ))}
     </div>
   );

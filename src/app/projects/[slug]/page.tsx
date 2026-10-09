@@ -6,6 +6,7 @@ import {
   getProjectBySlug,
   projectSlugs,
 } from "@/content/projects";
+import { createPageMetadata } from "@/lib/metadata";
 
 type PageProps = {
   params: Promise<{ slug: string }>;
@@ -21,10 +22,11 @@ export async function generateMetadata({
   const { slug } = await params;
   const project = getProjectBySlug(slug);
   if (!project) return { title: "Project not found" };
-  return {
+  return createPageMetadata({
     title: project.title,
     description: project.summary,
-  };
+    path: `/projects/${project.slug}`,
+  });
 }
 
 export default async function ProjectPage({ params }: PageProps) {
@@ -38,7 +40,7 @@ export default async function ProjectPage({ params }: PageProps) {
   return (
     <>
       <SiteHeader />
-      <main id="main">
+      <main id="main" tabIndex={-1}>
         <ProjectCaseStudy project={project} />
       </main>
     </>

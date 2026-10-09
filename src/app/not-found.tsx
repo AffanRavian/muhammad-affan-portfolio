@@ -9,6 +9,7 @@ export default function NotFound() {
       <SiteHeader />
       <main
         id="main"
+        tabIndex={-1}
         className="flex min-h-[70vh] flex-1 items-center bg-foundation py-section-rhythm"
       >
         <PageContainer>

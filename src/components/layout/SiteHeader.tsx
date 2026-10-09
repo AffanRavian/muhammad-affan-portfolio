@@ -34,6 +34,11 @@ export function SiteHeader() {
     const focusables = Array.from(
       panel.querySelectorAll<HTMLElement>(FOCUSABLE),
     );
+    const main = document.getElementById("main");
+    const mainWasInert = main?.hasAttribute("inert") ?? false;
+    const previousBodyOverflow = document.body.style.overflow;
+
+    main?.setAttribute("inert", "");
     focusables[0]?.focus();
 
     const onKeyDown = (event: KeyboardEvent) => {
@@ -62,7 +67,8 @@ export function SiteHeader() {
 
     return () => {
       document.removeEventListener("keydown", onKeyDown);
-      document.body.style.overflow = "";
+      document.body.style.overflow = previousBodyOverflow;
+      if (!mainWasInert) main?.removeAttribute("inert");
     };
   }, [menuOpen, closeMenuAndRestoreFocus]);
 

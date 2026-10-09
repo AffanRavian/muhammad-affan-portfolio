@@ -1,6 +1,6 @@
 # Muhammad Affan portfolio
 
-A content-driven personal portfolio built with Next.js App Router, strict TypeScript, and Tailwind CSS. The current implementation covers the static responsive experience (Phase 2); GSAP motion is intentionally deferred to Phase 3.
+A content-driven personal portfolio built with Next.js App Router, strict TypeScript, Tailwind CSS, GSAP, and `@gsap/react`. Motion is implemented as a responsive, reduced-motion-aware progressive enhancement over the server-rendered portfolio.
 
 ## Local development
 
@@ -11,11 +11,16 @@ npm run dev
 
 Open `http://localhost:3000`.
 
+`SITE_URL` is intentionally blank for local and preview builds. Before the
+production build, set it to the exact verified HTTPS deployment origin (with no
+path) so canonical URLs, indexing, and the sitemap are enabled. See
+`.env.example`.
+
 ## Validation
 
 ```bash
 npm run lint
-npx tsc --noEmit
+npm run typecheck
 npm run build
 ```
 
@@ -34,4 +39,4 @@ npm run build
 - Project artwork currently in `public/projects/` is conceptual and is labeled as such in the interface.
 - Do not add employer screenshots until they are explicitly approved and appropriately redacted.
 - A résumé download is shown only after an approved PDF is placed in `public/resume/` and configured in `src/content/site.ts`.
-- GSAP and `@gsap/react` belong to Phase 3 and are not required for the current static implementation.
+- GSAP animation is scoped through the client wrappers in `src/components/motion/`; preserve reduced-motion fallbacks and route cleanup when extending it.

@@ -11,7 +11,7 @@ export default function Home() {
   return (
     <>
       <SiteHeader />
-      <main id="main" className="flex-1">
+      <main id="main" tabIndex={-1} className="flex-1">
         <HeroSection />
         <WorkSection />
         <AboutSection />

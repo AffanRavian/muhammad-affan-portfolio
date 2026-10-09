@@ -10,30 +10,59 @@ type ProjectPreviewProps = {
 
 export function ProjectPreview({ project, reverse }: ProjectPreviewProps) {
   const href = `/projects/${project.slug}`;
+  const hasWideEcommerceScreenshot =
+    project.slug === "e-commerce-management-platform";
 
   return (
-    <article className="border-t border-ink/10 pt-10 first:border-t-0 first:pt-0 md:pt-14">
+    <article
+      data-project-preview
+      data-project-reverse={reverse ? "true" : "false"}
+      className={cn(
+        "border-t border-ink/10 pt-10 first:border-t-0 first:pt-0 md:pt-14",
+        hasWideEcommerceScreenshot &&
+          "xl:relative xl:left-1/2 xl:w-[min(102rem,calc(100vw-3rem))] xl:-translate-x-1/2",
+      )}
+    >
       <Link
         href={href}
-        className="group grid gap-8 md:grid-cols-12 md:items-center md:gap-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-focus-ring rounded-sm"
+        className={cn(
+          "group grid gap-8 rounded-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-focus-ring md:grid-cols-12 md:items-center",
+          hasWideEcommerceScreenshot
+            ? "md:gap-8 lg:gap-10 xl:grid-cols-[minmax(0,0.37fr)_minmax(0,0.63fr)] xl:gap-12"
+            : "md:gap-10",
+        )}
       >
         <div
+          data-project-media
           className={cn(
-            "md:col-span-5",
-            reverse ? "md:order-2 md:col-start-8" : "md:col-span-5",
+            hasWideEcommerceScreenshot
+              ? "md:order-2 md:col-span-6 md:col-start-7 lg:col-span-7 lg:col-start-6 xl:col-span-1 xl:col-start-2"
+              : reverse
+                ? "md:order-2 md:col-span-5 md:col-start-8"
+                : "md:col-span-5",
           )}
         >
           <PlaceholderMedia
-            src={project.placeholderPath}
-            alt={`Abstract conceptual artwork for ${project.title} — not an application screenshot`}
+            src={project.mediaPath}
+            alt={project.mediaAlt}
             kind={project.mediaKind}
-            sizes="(min-width: 768px) 38vw, 100vw"
+            width={project.mediaWidth}
+            height={project.mediaHeight}
+            sizes={
+              hasWideEcommerceScreenshot
+                ? "(min-width: 1648px) 63rem, (min-width: 1280px) 61vw, (min-width: 1024px) 57vw, (min-width: 768px) 48vw, 100vw"
+                : "(min-width: 768px) 38vw, 100vw"
+            }
           />
         </div>
         <div
+          data-project-copy
           className={cn(
-            "md:col-span-7",
-            reverse ? "md:order-1 md:col-start-1" : "",
+            hasWideEcommerceScreenshot
+              ? "md:order-1 md:col-span-6 md:col-start-1 lg:col-span-5 xl:col-span-1 xl:col-start-1"
+              : reverse
+                ? "md:order-1 md:col-span-7 md:col-start-1"
+                : "md:col-span-7",
           )}
         >
           <p className="font-mono text-[11px] uppercase tracking-[0.2em] text-ink/65">
@@ -64,6 +93,34 @@ export function ProjectPreview({ project, reverse }: ProjectPreviewProps) {
           </p>
         </div>
       </Link>
+      {project.liveUrl && (
+        <div
+          className={cn(
+            "mt-4 grid md:grid-cols-12 md:gap-10",
+            hasWideEcommerceScreenshot &&
+              "xl:grid-cols-[minmax(0,0.37fr)_minmax(0,0.63fr)] xl:gap-12",
+          )}
+        >
+          <div
+            className={cn(
+              hasWideEcommerceScreenshot
+                ? "md:col-span-6 md:col-start-1 lg:col-span-5 xl:col-span-1 xl:col-start-1"
+                : reverse
+                  ? "md:col-span-7 md:col-start-1"
+                  : "md:col-span-7 md:col-start-6",
+            )}
+          >
+            <a
+              href={project.liveUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex min-h-11 items-center rounded-sm font-mono text-xs uppercase tracking-[0.15em] text-ink decoration-2 decoration-accent underline-offset-4 hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-focus-ring"
+            >
+              Visit Live Website ↗
+            </a>
+          </div>
+        </div>
+      )}
     </article>
   );
 }

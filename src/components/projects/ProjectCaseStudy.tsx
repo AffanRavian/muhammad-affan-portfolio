@@ -6,6 +6,7 @@ import { ProjectNav } from "@/components/projects/ProjectNav";
 import { getAdjacentProjects } from "@/content/projects";
 import { Button } from "@/components/ui/Button";
 import { SECTION_IDS } from "@/lib/constants";
+import { ProjectCaseStudyMotion } from "@/components/motion/ProjectCaseStudyMotion";
 
 type ProjectCaseStudyProps = {
   project: Project;
@@ -19,7 +20,10 @@ function CaseBlock({
   children: React.ReactNode;
 }) {
   return (
-    <section className="border-t border-ink/10 py-10 first:pt-10">
+    <section
+      data-case-section
+      className="border-t border-ink/10 py-10 first:pt-10"
+    >
       <h2 className="font-mono text-[11px] uppercase tracking-[0.18em] text-ink/65">
         {title}
       </h2>
@@ -33,29 +37,55 @@ export function ProjectCaseStudy({ project }: ProjectCaseStudyProps) {
 
   return (
     <article className="bg-paper pb-section-rhythm pt-28 text-ink">
-      <PageContainer>
+      <ProjectCaseStudyMotion routeKey={project.slug}>
+        <PageContainer>
         <header className="grid gap-10 lg:grid-cols-12">
           <div className="lg:col-span-7">
-            <p className="font-mono text-[11px] uppercase tracking-[0.2em] text-ink/65">
+            <p
+              data-case-hero-item
+              className="font-mono text-[11px] uppercase tracking-[0.2em] text-ink/65"
+            >
               <span className="rounded-sm bg-accent px-1.5 py-0.5 text-ink">
                 {project.index}
               </span>
               <span className="mx-3 inline-block h-px w-6 align-middle bg-ink/25" />
               {project.category}
             </p>
-            <h1 className="mt-4 font-display text-display-h2 tracking-tight text-ink">
+            <h1
+              data-case-hero-item
+              className="mt-4 font-display text-display-h2 tracking-tight text-ink"
+            >
               {project.title}
             </h1>
-            <p className="mt-3 text-sm text-ink/65">{project.employer}</p>
-            <p className="mt-6 max-w-2xl text-lg leading-relaxed text-ink/80">
+            <p data-case-hero-item className="mt-3 text-sm text-ink/65">
+              {project.employer}
+            </p>
+            <p
+              data-case-hero-item
+              className="mt-6 max-w-2xl text-lg leading-relaxed text-ink/80"
+            >
               {project.summary}
             </p>
+            {project.liveUrl && (
+              <div data-case-hero-item className="mt-8">
+                <Button
+                  href={project.liveUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  variant="outline"
+                >
+                  Visit Live Website ↗
+                </Button>
+              </div>
+            )}
           </div>
-          <div className="lg:col-span-5">
+          <div data-case-hero-media className="lg:col-span-5">
             <PlaceholderMedia
-              src={project.placeholderPath}
-              alt={`Abstract conceptual artwork for ${project.title} — not an application screenshot`}
+              src={project.mediaPath}
+              alt={project.mediaAlt}
               kind={project.mediaKind}
+              width={project.mediaWidth}
+              height={project.mediaHeight}
               priority
             />
           </div>
@@ -107,7 +137,7 @@ export function ProjectCaseStudy({ project }: ProjectCaseStudyProps) {
             </ul>
           </CaseBlock>
 
-          <section className="border-t border-ink/10 py-10">
+          <section data-case-section className="border-t border-ink/10 py-10">
             <h2 className="font-mono text-[11px] uppercase tracking-[0.18em] text-ink/65">
               Gallery
             </h2>
@@ -125,14 +155,17 @@ export function ProjectCaseStudy({ project }: ProjectCaseStudyProps) {
           </CaseBlock>
 
           {!project.liveUrl && !project.repoUrl && (
-            <div className="mt-10 rounded-sm border border-ink/15 bg-foundation/5 px-4 py-4">
+            <div
+              data-case-section
+              className="mt-10 rounded-sm border border-ink/15 bg-foundation/5 px-4 py-4"
+            >
               <p className="font-mono text-[11px] uppercase tracking-[0.14em] text-ink/70">
                 Private project — walkthrough available upon request
               </p>
             </div>
           )}
 
-          <div className="mt-12 flex flex-wrap gap-4">
+          <div data-case-section className="mt-12 flex flex-wrap gap-4">
             <Button href={`/#${SECTION_IDS.work}`} variant="primary">
               Back to selected work
             </Button>
@@ -143,7 +176,8 @@ export function ProjectCaseStudy({ project }: ProjectCaseStudyProps) {
         </div>
 
         <ProjectNav prev={prev} next={next} />
-      </PageContainer>
+        </PageContainer>
+      </ProjectCaseStudyMotion>
     </article>
   );
 }

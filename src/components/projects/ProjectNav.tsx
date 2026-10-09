@@ -10,12 +10,15 @@ type ProjectNavProps = {
 export function ProjectNav({ prev, next }: ProjectNavProps) {
   return (
     <nav
+      data-case-section
       className="mt-16 grid gap-6 border-t border-ink/10 pt-10 md:grid-cols-2"
       aria-label="Project navigation"
     >
       {prev ? (
         <Link
           href={`/projects/${prev.slug}`}
+          data-case-nav-link
+          data-case-direction="-1"
           className="group rounded-sm p-2 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-focus-ring"
         >
           <p className="font-mono text-[10px] uppercase tracking-[0.16em] text-ink/65">
@@ -31,6 +34,8 @@ export function ProjectNav({ prev, next }: ProjectNavProps) {
       {next ? (
         <Link
           href={`/projects/${next.slug}`}
+          data-case-nav-link
+          data-case-direction="1"
           className="group rounded-sm p-2 text-left md:text-right focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-focus-ring"
         >
           <p className="font-mono text-[10px] uppercase tracking-[0.16em] text-ink/65">
@@ -44,6 +49,8 @@ export function ProjectNav({ prev, next }: ProjectNavProps) {
       <div className="md:col-span-2">
         <Link
           href={`/#${SECTION_IDS.contact}`}
+          data-case-nav-link
+          data-case-direction="1"
           className="font-mono text-xs uppercase tracking-[0.15em] text-ink decoration-2 decoration-accent underline-offset-4 hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-focus-ring"
         >
           Get in touch about this work

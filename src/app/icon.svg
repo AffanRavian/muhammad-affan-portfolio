@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-labelledby="title">
+  <title id="title">Muhammad Affan portfolio</title>
+  <rect width="64" height="64" rx="10" fill="#101114"/>
+  <path d="M10 47V17h7.5l7.25 15.25L32 17h7.5v30h-6V27.8l-6.1 12.4h-5.3L16 27.8V47h-6Z" fill="#F3F0E8"/>
+  <path d="M44 47V17h10v30H44Zm0-5.75h10" fill="#C5F277"/>
+  <circle cx="54" cy="53" r="3" fill="#C5F277"/>
+</svg>
